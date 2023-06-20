@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="title template">
+        <h2>Temperature Conversion</h2>
+    </header>
+
+    <section class="main template">
+        <div class="form-container">
+            <div class="form-input">
+                <label class="celsius" for="celsius1">Celsius :</label>
+                <input type="number" id="celsius" name="celsius" placeholder="Enter Celsius" required>
+            </div>
+
+            <div class="form-input fahrenheit">
+                <label class="fahrenheit" for="fahrenheit">Fahrenheit :</label>
+                <input type="number" id="fahrenheit" name="fahrenheit" placeholder="Enter Fahrenheit" required>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" value="Konversi" onclick="convert()">Konversi</button>
+                <button type="submit" value="Reset">Reset</button>
+                <button type="submit" value="Reverse">Reverse</button>
+            </div>
+
+            <div class="form-input form-hasil">
+                <label for="hasil">Hasil :</label>
+                <div id="hasil">
+                    <!-- <h2>(celsius * 9 / 5) + 32;</h2> -->
+                </div>
+                <!-- <input type="number" name="hasil"> -->
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
