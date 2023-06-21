@@ -89,7 +89,7 @@ function reverse() {
         document.querySelector('#fahrenheit-form label').innerHTML = "Celsius :";
     }else{
         convertCelcius = true; 
-        // reset()
+        reset()
 
         celciusInput.setAttribute('id','celsius');
         document.querySelector('#celsius-form label').innerHTML = "Celsius :";
