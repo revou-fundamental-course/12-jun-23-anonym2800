@@ -1,21 +1,25 @@
+// Selection  DOM element
 const celciusInput = document.getElementById('celsius');
 const hasil = document.querySelector('.form-hasil #hasil'); 
+// Variable 
 let convertCelcius = true;
 
+// selection Dom element and give Style display="none"
 let displayNone = document.querySelector('.form-control')
 displayNone.style.display = 'none';
 
-
+// Fungsi Celcius to Fahrenheit
 function convertFahrenheitToCelcius(fahrenheit) {
     let celsius = (fahrenheit - 32) * 5 / 9;
     return celsius
 }
-
+// Fungsi Fahrenheit to Celcius
 function convertCelciusToFahrenheit(celsius) {
     let fahrenheit = (celsius * 9 / 5) + 32;
     return fahrenheit;
 }
 
+// fungsi btn convert
 function convert() {
     if (convertCelcius) {
         convertToFahrenheit();
@@ -25,7 +29,7 @@ function convert() {
         
     }
 }
-
+// Fungsi Rumus Celcius to Fahrenheit
 function convertToFahrenheit() {
     let fahrenheitOutput = convertCelciusToFahrenheit(celciusInput.value);
         if (celciusInput.value) {
@@ -41,6 +45,7 @@ function convertToFahrenheit() {
         }    
 }
 
+// Fungsi Rumus Fahrenheit to Celcius
 function convertToCelcius() {
     let celciusOutput = convertFahrenheitToCelcius(celciusInput.value);
     if (celciusInput.value) {
@@ -56,6 +61,7 @@ function convertToCelcius() {
     }    
 }
 
+// Fungsi btn Reset
 function reset() {
     document.getElementById('hasilFahrenheit').innerHTML = "";
     let hapus = document.querySelector('.form-hasil #hasil');
@@ -68,6 +74,7 @@ function reset() {
     }
 }
 
+// Fungsi btn Reverse
 function reverse() {
     celciusInput.setAttribute('id','celsius');
 
