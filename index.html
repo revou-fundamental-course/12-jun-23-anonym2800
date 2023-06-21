@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -19,31 +22,44 @@
 
     <section class="main template">
         <div class="form-container">
-            <div class="form-input">
+            <div class="form-input" id="celsius-form">
                 <label class="celsius" for="celsius1">Celsius :</label>
                 <input type="number" id="celsius" name="celsius" placeholder="Enter Celsius" required>
             </div>
 
-            <div class="form-input fahrenheit">
-                <label class="fahrenheit" for="fahrenheit">Fahrenheit :</label>
-                <input type="number" id="fahrenheit" name="fahrenheit" placeholder="Enter Fahrenheit" required>
-            </div>
-
             <div class="form-submit">
                 <button type="submit" value="Konversi" onclick="convert()">Konversi</button>
-                <button type="submit" value="Reset">Reset</button>
-                <button type="submit" value="Reverse">Reverse</button>
+                <button type="submit" value="Reset" onclick="reset()">Reset</button>
+                <button type="submit" value="Reverse" onclick="reverse()">Reverse</button>
             </div>
-
-            <div class="form-input form-hasil">
-                <label for="hasil">Hasil :</label>
-                <div id="hasil">
-                    <!-- <h2>(celsius * 9 / 5) + 32;</h2> -->
+            <div class="form-control">
+                <div class="form-input " id="fahrenheit-form">
+                    <label class="fahrenheit" for="fahrenheit">Fahrenheit :</label>
+                    <div class="fahrenheit" id="hasilFahrenheit">
+                    </div>
                 </div>
-                <!-- <input type="number" name="hasil"> -->
+                <div class="form-input form-hasil">
+                    <label for="hasil">Hasil :</label>
+                    <div class="container" id="hasil">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <footer class="main template about-footer">
+        <div class="title about">
+            <h2>About</h2>
+        </div>
+        <div class="section">
+            <h5>Selamat datang di situs kami tentang konversi suhu! Temukan informasi dan alat konversi suhu yang
+                berguna. Konversi
+                antara Celsius, Fahrenheit, dan Kelvin dengan mudah.</h5>
+        </div>
+        <div class="created-by">
+            <a href="https://www.instagram.com/sandy.shultan/">created-by : <i class="fa-brands fa-instagram"></i>
+                sandy.shultan</a>
+        </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 
