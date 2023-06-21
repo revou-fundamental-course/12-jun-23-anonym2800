@@ -19,18 +19,10 @@ function convertCelciusToFahrenheit(celsius) {
 function convert() {
     if (convertCelcius) {
         convertToFahrenheit();
-        // if (convertToFahrenheit == true) {
-        //     displayNone.style.display = "block";
-        // }else{
-        //     displayNone.style.display = "none";
-        // }
+        
     }else{
         convertToCelcius();
-        // if (convertToCelcius == true) {
-        //     displayNone.style.display = "block";
-        // }else{
-        //     displayNone.style.display = "none";
-        // }
+        
     }
 }
 
@@ -39,10 +31,10 @@ function convertToFahrenheit() {
         if (celciusInput.value) {
             let outputFahrenheit = document.getElementById('hasilFahrenheit');
             outputFahrenheit.value = fahrenheitOutput;
-            outputFahrenheit.innerHTML = `<h2>${fahrenheitOutput}</h2>`
+            outputFahrenheit.innerHTML = `<h2>${fahrenheitOutput.toFixed(2)} °F</h2>`
             
             displayNone.style.display = "block";
-            hasil.innerHTML = `<h2>(${celciusInput.value} °C * 9 / 5) + 32 = ${fahrenheitOutput} °F</h2>`
+            hasil.innerHTML = `<h2>(${celciusInput.value} °C * 9 / 5) + 32 = ${fahrenheitOutput.toFixed(2)} °F</h2>`
         }else{
             displayNone.style.display = "none";
             return alert ('Please Input celsius ');
@@ -54,10 +46,10 @@ function convertToCelcius() {
     if (celciusInput.value) {
         let outputCelcius = document.getElementById('hasilFahrenheit');
         outputCelcius.value = celciusOutput;
-        outputCelcius.innerHTML = `<h2>${celciusOutput}</h2>`
+        outputCelcius.innerHTML = `<h2>${celciusOutput.toFixed(2)} °C</h2>`
 
         displayNone.style.display = "block";
-        hasil.innerHTML = `<h2>(${celciusInput.value} °F - 32 ) * 5 / 9 = ${celciusOutput} °F`
+        hasil.innerHTML = `<h2>(${celciusInput.value} °F - 32 ) * 5 / 9 = ${celciusOutput.toFixed(2)} °C`
     }else{
         displayNone.style.display = "none";
         return alert ('Please Input Fahrenheit ');
