@@ -19,11 +19,14 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-accent-green);
     color: var(--bg-black);
-    min-height: 2000px;
 }
 
 .template{
     margin: 20px;
+}
+
+.about{
+    margin-bottom:20px
 }
 
 .title{
@@ -32,11 +35,11 @@ body{
     padding: 8px;
     border-radius: 8px;
     text-align: center;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: color .3s ease-in-out, box-shadow .4s ease-in-out;
 }
 
 .title:hover{
-    box-shadow: inset 1500px 0 0 0 rgba(0,0,0,0.5);
+    box-shadow: inset 1700px 0 0 0 rgba(0,0,0,0.5);
     color: var(--bg-light-green);
 }
 
@@ -46,7 +49,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    padding:20px;
+    border-radius:8px;
+    background-color: rgba(255, 255, 255, 0.149);
 }
 
 .form-input {
@@ -87,7 +92,7 @@ body{
 }
 
 .form-submit {
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .form-submit button[type="submit"] {
@@ -112,6 +117,72 @@ body{
     margin-top: 20px;
 }
 
-.form-hasil #hasil{
+.form-hasil label {
+    text-align-last: center;
+}
 
+.form-hasil h2{
+    padding: 20px;
+    text-align: center;
+    color: var(--bg-house-green);
+    width: 400px;
+    font-size: 17px;
+    border-radius: 8px;
+    background-color: rgba(191, 191, 191, 0.5);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.form-hasil h2:hover {
+    box-shadow: inset 1500px 0 0 0 rgba(0, 0, 0, 0.5);
+    color: var(--bg-light-green);
+}
+
+
+/* Fah */
+#fahrenheit-form {
+    margin-top: 20px;
+}
+
+#fahrenheit-form h2 {
+    padding: 20px;
+    text-align: center;
+    color: var(--bg-house-green);
+    width: 400px;
+    font-size: 17px;
+    border-radius: 8px;
+    background-color: rgba(191, 191, 191, 0.5);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#fahrenheit-form h2:hover {
+    box-shadow: inset 1500px 0 0 0 rgba(0, 0, 0, 0.5);
+    color: var(--bg-light-green);
+}
+
+.section h5{
+    text-align: justify;
+}
+
+.created-by a {
+    color: var(--bg-primary);
+    font-size: 10px;
+    display: inline-block;
+}
+
+.created-by a:hover {
+    color: black;
+    transition: 0.2s;
+}
+
+.created-by a::after {
+    content: '';
+    display: block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--bg-light-green);
+    transform: scaleX(0);
+    transition: 0.4s linear;
+}
+
+.created-by a:hover::after {
+    transform: scaleX(0.5);
 }

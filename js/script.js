@@ -1,19 +1,99 @@
+const celciusInput = document.getElementById('celsius');
+const hasil = document.querySelector('.form-hasil #hasil'); 
+let convertCelcius = true;
+
+let displayNone = document.querySelector('.form-control')
+displayNone.style.display = 'none';
+
+
+function convertFahrenheitToCelcius(fahrenheit) {
+    let celsius = (fahrenheit - 32) * 5 / 9;
+    return celsius
+}
+
 function convertCelciusToFahrenheit(celsius) {
     let fahrenheit = (celsius * 9 / 5) + 32;
     return fahrenheit;
 }
 
 function convert() {
-    let celciusInput = document.getElementById('celsius').value;
-    let fahrenheitOutput = convertCelciusToFahrenheit(celciusInput);
-    console.log(fahrenheitOutput);
-    
-    let outputFahrenheit = 
-    document.querySelector('.form-input.fahrenheit input[type="number"]');
-    outputFahrenheit.value = fahrenheitOutput;
-
-    let hasil = 
-    document.querySelector('.form-hasil #hasil');
-    hasil.innerHTML = `<h2>(${celciusInput} * 9 / 5) + 32 = ${fahrenheitOutput}</h2>`
+    if (convertCelcius) {
+        convertToFahrenheit();
+        // if (convertToFahrenheit == true) {
+        //     displayNone.style.display = "block";
+        // }else{
+        //     displayNone.style.display = "none";
+        // }
+    }else{
+        convertToCelcius();
+        // if (convertToCelcius == true) {
+        //     displayNone.style.display = "block";
+        // }else{
+        //     displayNone.style.display = "none";
+        // }
+    }
 }
 
+function convertToFahrenheit() {
+    let fahrenheitOutput = convertCelciusToFahrenheit(celciusInput.value);
+        if (celciusInput.value) {
+            let outputFahrenheit = document.getElementById('hasilFahrenheit');
+            outputFahrenheit.value = fahrenheitOutput;
+            outputFahrenheit.innerHTML = `<h2>${fahrenheitOutput}</h2>`
+            
+            displayNone.style.display = "block";
+            hasil.innerHTML = `<h2>(${celciusInput.value} °C * 9 / 5) + 32 = ${fahrenheitOutput} °F</h2>`
+        }else{
+            displayNone.style.display = "none";
+            return alert ('Please Input celsius ');
+        }    
+}
+
+function convertToCelcius() {
+    let celciusOutput = convertFahrenheitToCelcius(celciusInput.value);
+    if (celciusInput.value) {
+        let outputCelcius = document.getElementById('hasilFahrenheit');
+        outputCelcius.value = celciusOutput;
+        outputCelcius.innerHTML = `<h2>${celciusOutput}</h2>`
+
+        displayNone.style.display = "block";
+        hasil.innerHTML = `<h2>(${celciusInput.value} °F - 32 ) * 5 / 9 = ${celciusOutput} °F`
+    }else{
+        displayNone.style.display = "none";
+        return alert ('Please Input Fahrenheit ');
+    }    
+}
+
+function reset() {
+    document.getElementById('hasilFahrenheit').innerHTML = "";
+    let hapus = document.querySelector('.form-hasil #hasil');
+    hapus.innerHTML = "";
+    displayNone.style.display = "none";
+    if(celciusInput.getAttribute('id') == 'celsius'){
+        document.getElementById('celsius').value = "";
+    }else{
+        document.getElementById('fahrenheit').value = "";
+    }
+}
+
+function reverse() {
+    celciusInput.setAttribute('id','celsius');
+
+    if (convertCelcius) {
+        convertCelcius = false;
+        reset();
+
+        celciusInput.removeAttribute('id')
+        celciusInput.setAttribute('id','fahrenheit');
+
+        document.querySelector('#celsius-form label').innerHTML = "Fahrenheit :";
+        document.querySelector('#fahrenheit-form label').innerHTML = "Celsius :";
+    }else{
+        convertCelcius = true; 
+        // reset()
+
+        celciusInput.setAttribute('id','celsius');
+        document.querySelector('#celsius-form label').innerHTML = "Celsius :";
+        document.querySelector('#fahrenheit-form label').innerHTML = "Fahrenheit :";
+    }
+}
